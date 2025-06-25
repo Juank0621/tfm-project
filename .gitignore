@@ -6,6 +6,9 @@ dist/
 wheels/
 *.egg-info
 
+# Package management files
+uv.lock
+
 # Virtual environments
 .venv
 .env
