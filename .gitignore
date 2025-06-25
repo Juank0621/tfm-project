@@ -1,0 +1,26 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+.env
+.env.*
+!.env.example
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Data directories (ignora completamente el directorio data y su contenido)
+data/
+
+# Logs
+*.log
+
+# OS specific files
+.DS_Store
+Thumbs.db
