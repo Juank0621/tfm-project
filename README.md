@@ -1,4 +1,4 @@
-# Trabajo Final de Máster - Análisis de Opiniones de Restaurantes 🍽️
+# 🍽️ Trabajo Final de Máster - Análisis de Opiniones de Restaurantes
 
 Este proyecto forma parte del Trabajo Final de Máster en Big Data, enfocado en el análisis de opiniones de restaurantes utilizando técnicas de Procesamiento de Lenguaje Natural (NLP) sobre el dataset de Yelp.
 
