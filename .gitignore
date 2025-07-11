@@ -82,8 +82,15 @@ data/
 *.sqlite
 
 # =========================
-# LaTeX temporary files
+# LaTeX and TFM documentation
 # =========================
+# Ignore entire TFM directory (LaTeX source, PDFs, temporary files)
+tfm/
+
+# Ignore entire models directory
+models/
+
+# LaTeX temporary files (additional patterns)
 *.aux
 *.lof
 *.log
@@ -96,6 +103,23 @@ data/
 *.cb
 *.cb2
 .*.lb
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.idx
+*.ilg
+*.ind
+*.ist
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.nav
+*.snm
+*.vrb
 
 # =========================
 # IDE and editors
@@ -118,6 +142,11 @@ data/
 
 # Jupyter Lab
 .jupyter/
+
+# =========================
+# Streamlit
+# =========================
+.streamlit/
 
 # =========================
 # Logs and temp files
