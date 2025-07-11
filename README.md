@@ -16,9 +16,9 @@ El proyecto implementa un pipeline completo de análisis de datos que incluye:
 
 ```
 tfm-proyecto/
-├── app/                          # Dashboard interactivo
-│   └── streamlit_app.py         # Aplicación principal
-├── notebooks/                   # Análisis en Jupyter
+├── app/                        # Dashboard interactivo
+│   └── streamlit_app.py        # Aplicación principal
+├── notebooks/                  # Análisis en Jupyter
 │   ├── data-ingestion/         # Ingesta de datos
 │   ├── data-analysis/          # Análisis exploratorio
 │   ├── sentimental-analysis/   # Análisis de sentimientos
@@ -29,7 +29,7 @@ tfm-proyecto/
 ├── data/                       # Datos procesados
 ├── models/                     # Modelos entrenados
 ├── figures/                    # Gráficos y visualizaciones
-└── pyproject.toml             # Configuración de dependencias
+└── pyproject.toml              # Configuración de dependencias
 ```
 
 ## 🚀 Instalación y Configuración
