@@ -67,7 +67,7 @@ Los notebooks están organizados por etapas del pipeline:
 
 ```bash
 # Activar entorno virtual
-uv shell
+source .venv/bin/activate
 
 # Ejecutar Jupyter
 jupyter lab
