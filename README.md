@@ -148,4 +148,4 @@ Este es un proyecto académico desarrollado como Trabajo Final de Máster. Para 
 
 ## 📄 Licencia
 
-Proyecto académico - Universidad/Institución correspondiente.
+Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
