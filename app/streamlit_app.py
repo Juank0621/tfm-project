@@ -9,6 +9,14 @@ from streamlit_folium import st_folium
 import warnings
 warnings.filterwarnings('ignore')
 
+# Imports for RoBERTa sentiment analysis
+try:
+    from transformers import pipeline
+    import torch
+    TRANSFORMERS_AVAILABLE = True
+except ImportError:
+    TRANSFORMERS_AVAILABLE = False
+
 # ==========================================
 # CONFIGURACIÓN DE PÁGINA
 # ==========================================
@@ -176,6 +184,47 @@ st.markdown("""
 # FUNCIONES DE DATOS
 # ==========================================
 
+@st.cache_resource
+def load_sentiment_model():
+    """Load the RoBERTa sentiment analysis model"""
+    if TRANSFORMERS_AVAILABLE:
+        try:
+            # Load the RoBERTa model for sentiment analysis
+            model_name = "cardiffnlp/twitter-roberta-base-sentiment-latest"
+            sentiment_pipeline = pipeline(
+                "sentiment-analysis",
+                model=model_name,
+                tokenizer=model_name,
+                return_all_scores=True
+            )
+            return sentiment_pipeline
+        except Exception as e:
+            st.error(f"Error loading RoBERTa model: {e}")
+            return None
+    else:
+        st.warning("⚠️ Transformers library not available. Using simulated results.")
+        return None
+
+def analyze_sentiment_text(text, model):
+    """Analyze sentiment of a text using RoBERTa model"""
+    if model is None or not TRANSFORMERS_AVAILABLE:
+        # Fallback to simulation if model not available
+        sentiments = ['POSITIVE', 'NEGATIVE', 'NEUTRAL']
+        probs = np.random.dirichlet([0.6, 0.2, 0.2])
+        return [{'label': sent, 'score': prob} for sent, prob in zip(sentiments, probs)]
+    
+    try:
+        # Use the actual RoBERTa model
+        results = model(text)
+        # The model returns a list of dictionaries with 'label' and 'score'
+        return results[0] if results else []
+    except Exception as e:
+        st.error(f"Error analyzing sentiment: {e}")
+        # Fallback to simulation
+        sentiments = ['POSITIVE', 'NEGATIVE', 'NEUTRAL']
+        probs = np.random.dirichlet([0.6, 0.2, 0.2])
+        return [{'label': sent, 'score': prob} for sent, prob in zip(sentiments, probs)]
+
 @st.cache_data
 def load_sample_data():
     """Generar datos de muestra para el dashboard"""
@@ -297,6 +346,10 @@ with st.spinner("⏳ Cargando datos..."):
     df_restaurants, df_states = load_sample_data()
     df_sentiment = load_sentiment_sample()
     df_topics = load_topics_sample()
+
+# Load the RoBERTa sentiment analysis model
+with st.spinner("🤖 Loading RoBERTa sentiment model..."):
+    sentiment_model = load_sentiment_model()
 
 # ==========================================
 # PÁGINAS DEL DASHBOARD
@@ -599,34 +652,54 @@ elif page == "💭 Análisis de Sentimientos":
     col1, col2 = st.columns([2, 1])
     
     with col1:
-        st.subheader("🧪 Analizador de Texto")
+        st.subheader("🧪 Text Analyzer")
+        
+        # Model information
+        if TRANSFORMERS_AVAILABLE and sentiment_model is not None:
+            st.info("🤖 **Using RoBERTa Model**: `cardiffnlp/twitter-roberta-base-sentiment-latest` - Optimized for English text sentiment analysis")
+        else:
+            st.warning("⚠️ **Simulation Mode**: RoBERTa model not available. Using simulated results for demonstration.")
         
         # Entrada de texto
         user_text = st.text_area(
-            "Escribe una reseña para analizar:",
-            placeholder="Ejemplo: La comida estaba deliciosa y el servicio fue excelente. Definitivamente volveré.",
+            "Write a review to analyze:",
+            placeholder="Example: The food was delicious and the service was excellent. I will definitely return.",
             height=100
         )
         
-        if st.button("🚀 Analizar Sentimiento", type="primary"):
+        if st.button("🚀 Analyze Sentiment", type="primary"):
             if user_text.strip():
-                # Simulación de análisis (en la realidad usarías el modelo RoBERTa)
-                sentiments = ['Positive', 'Negative', 'Neutral']
-                probs = np.random.dirichlet([0.6, 0.2, 0.2])  # Sesgado hacia positivo
+                # Use the actual RoBERTa model for sentiment analysis
+                with st.spinner("🤖 Analyzing sentiment..."):
+                    sentiment_results = analyze_sentiment_text(user_text, sentiment_model)
+                
+                # Process the results from the model
+                sentiments = []
+                probabilities = []
+                
+                for result in sentiment_results:
+                    label = result['label'].capitalize()
+                    if label == 'Negative':
+                        sentiments.append('Negative')
+                    elif label == 'Neutral':
+                        sentiments.append('Neutral')
+                    else:  # Positive
+                        sentiments.append('Positive')
+                    probabilities.append(result['score'])
                 
                 result_data = pd.DataFrame({
-                    'Sentimiento': sentiments,
-                    'Probabilidad': probs
+                    'Sentiment': sentiments,
+                    'Probability': probabilities
                 })
                 
                 # Gráfico de barras
                 fig = px.bar(
                     result_data,
-                    x='Sentimiento',
-                    y='Probabilidad',
-                    color='Probabilidad',
+                    x='Sentiment',
+                    y='Probability',
+                    color='Probability',
                     color_continuous_scale='RdYlGn',
-                    title="Análisis de Sentimiento"
+                    title="Sentiment Analysis"
                 )
                 fig.update_layout(
                     paper_bgcolor='rgba(0,0,0,0)',
@@ -636,8 +709,8 @@ elif page == "💭 Análisis de Sentimientos":
                 st.plotly_chart(fig, use_container_width=True)
                 
                 # Resultado principal
-                max_sentiment = sentiments[np.argmax(probs)]
-                max_prob = np.max(probs)
+                max_sentiment = sentiments[np.argmax(probabilities)]
+                max_prob = np.max(probabilities)
                 
                 color_map = {'Positive': '#10b981', 'Negative': '#ef4444', 'Neutral': '#f59e0b'}
                 color = color_map[max_sentiment]
@@ -652,30 +725,30 @@ elif page == "💭 Análisis de Sentimientos":
                     margin: 1rem 0;
                 ">
                     <h3 style="color: {color}; margin: 0;">
-                        Sentimiento: {max_sentiment}
+                        Sentiment: {max_sentiment}
                     </h3>
                     <p style="font-size: 1.2rem; margin: 0.5rem 0; color: #fafafa;">
-                        Confianza: {max_prob:.1%}
+                        Confidence: {max_prob:.1%}
                     </p>
                 </div>
                 """, unsafe_allow_html=True)
             else:
-                st.warning("⚠️ Por favor, ingresa un texto para analizar.")
+                st.warning("⚠️ Please enter some text to analyze.")
     
     with col2:
-        st.subheader("📋 Ejemplos")
+        st.subheader("📋 Examples")
         
         examples = [
-            "🎉 ¡Increíble experiencia! La comida deliciosa y el servicio excepcional.",
-            "😞 Muy decepcionante. La comida llegó fría y el servicio fue pésimo.",
-            "😐 El restaurante está bien, nada especial pero tampoco malo.",
-            "❤️ ¡Mi lugar favorito! Siempre vuelvo por la pasta increíble.",
-            "💸 Muy caro para la calidad que ofrecen. No vale la pena."
+            "🎉 Amazing experience! The food was delicious and the service exceptional.",
+            "😞 Very disappointing. The food arrived cold and the service was terrible.",
+            "😐 The restaurant is okay, nothing special but not bad either.",
+            "❤️ My favorite place! I always come back for the incredible pasta.",
+            "💸 Too expensive for the quality they offer. Not worth it."
         ]
         
         for i, example in enumerate(examples):
-            if st.button(f"Ejemplo {i+1}", key=f"example_{i}", use_container_width=True):
-                st.text_area("Texto seleccionado:", value=example.split(maxsplit=1)[1], key="example_display", disabled=True)
+            if st.button(f"Example {i+1}", key=f"example_{i}", use_container_width=True):
+                st.text_area("Selected text:", value=example.split(maxsplit=1)[1], key="example_display", disabled=True)
     
     # Estadísticas del dataset
     st.markdown("---")
@@ -780,10 +853,12 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
+# Activar el entorno virtual
+# source .venv/bin/activate 
 
-# source .venv/bin/activate # Activar el entorno virtual
+# Navegar al directorio de la aplicación
+# cd app 
 
-# cd app # Navegar al directorio de la aplicación
-
-# streamlit run streamlit_app.py # Ejecutar la aplicación   
+# Ejecutar la aplicación   
+# streamlit run streamlit_app.py 
 
