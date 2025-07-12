@@ -85,7 +85,9 @@ data/
 # LaTeX and TFM documentation
 # =========================
 # Ignore entire TFM directory (LaTeX source, PDFs, temporary files)
-tfm/
+tfm/data/
+tfm/figures/
+tfm/images/
 
 # Ignore entire models directory
 models/
@@ -94,6 +96,7 @@ models/
 *.aux
 *.lof
 *.log
+*.lol
 *.lot
 *.fls
 *.out
@@ -105,6 +108,7 @@ models/
 .*.lb
 *.fdb_latexmk
 *.synctex.gz
+*.synctex(busy).gz
 *.bbl
 *.blg
 *.idx
@@ -120,6 +124,7 @@ models/
 *.nav
 *.snm
 *.vrb
+*.tex
 
 # =========================
 # IDE and editors
