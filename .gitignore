@@ -68,11 +68,15 @@ ipython_config.py
 # =========================
 # Project-specific data 
 # =========================
-# Data directories - Ignore all data files
-data/
+# Data directories - Ignore all data files except specific ones
+data/*
 !data/README.md
+!data/geo/
+data/geo/*
+!data/geo/*.json
 *.csv
 *.json
+!data/geo/*.json
 *.parquet
 *.feather
 *.pickle
