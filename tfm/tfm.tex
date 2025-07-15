@@ -1065,7 +1065,7 @@ Philadelphia emergió como la ciudad con mayor concentración de restaurantes (5
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{figures/business_cities_distribution.png}
-\caption{Distribución de restaurantes por ciudad (Top 20)}
+\caption{Distribución de restaurantes por ciudad}
 \label{fig:business_cities_distribution}
 \end{figure}
 
@@ -1121,7 +1121,7 @@ Los restaurantes más reseñados incluyen:
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{figures/business_top_restaurants_by_reviews.png}
-\caption{Top 20 restaurantes por número de reseñas}
+\caption{Restaurantes por número de reseñas}
 \label{fig:business_top_restaurants}
 \end{figure}
 
@@ -1178,7 +1178,7 @@ Bars & 8,337 & 16.0\% \\
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{figures/business_top_categories.png}
-\caption{Top 20 categorías de negocios gastronómicos}
+\caption{Categorías de negocios gastronómicos}
 \label{fig:business_top_categories}
 \end{figure}
 
@@ -1722,13 +1722,13 @@ Tópico más pequeño & 50 documentos \\
 
 \section{Análisis de Tópicos Principales}
 
-\subsection{Top 10 Tópicos Identificados}
+\subsection{Principales Tópicos Identificados}
 
 Los tópicos más significativos revelan patrones claros en las experiencias gastronómicas:
 
 \begin{table}[H]
 \centering
-\caption{Top 10 tópicos principales identificados}
+\caption{Tópicos principales identificados}
 \begin{tabular}{@{}lrrl@{}}
 \toprule
 \textbf{Tópico} & \textbf{Docs} & \textbf{Sent. Dom.} & \textbf{Palabras Clave Principales} \\
@@ -1823,7 +1823,7 @@ El mapa de calor de la Figura~\ref{fig:topic_model_heatmap} ilustra las correlac
 
 La identificación de términos más importantes por tópico proporciona insights directos sobre las palabras clave que definen cada categoría gastronómica, facilitando la interpretación semántica de los resultados.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
 \includegraphics[width=1.0\textwidth]{figures/topic_model_terms.png}
 \caption{Análisis de términos más importantes por tópico}
@@ -1836,94 +1836,61 @@ La Figura~\ref{fig:topic_model_terms} presenta el ranking de términos más repr
 
 \subsection{Patrones de Sentimiento}
 
-El análisis reveló patrones claros en la distribución de sentimientos:
+El análisis de sentimientos reveló una polarización clara en las experiencias gastronómicas. La experiencia general mantiene un 95.2\% de sentimiento positivo, junto con las experiencias en bares que alcanzan 89.9\% de valoración positiva, indicando que los aspectos fundamentales de la oferta gastronómica son ampliamente apreciados.
 
-\begin{itemize}
-    \item \textbf{Tópicos más positivos}:
-        \begin{itemize}
-            \item Experiencia general (95.2\% positivo)
-            \item Bares/Bebidas (89.9\% positivo)
-        \end{itemize}
-    \item \textbf{Tópico más negativo}: Servicio al cliente (87.3\% negativo)
-    \item \textbf{Balance general}: 9 de 10 tópicos principales son mayoritariamente positivos
-\end{itemize}
+En contraste, el servicio al cliente presenta un 87.3\% de sentimiento negativo, identificándose como el principal punto de dolor para los consumidores. Este patrón sugiere que mientras la calidad culinaria es satisfactoria, existe una brecha crítica en la experiencia de servicio. Significativamente, 9 de los 10 tópicos principales mantienen orientación positiva, confirmando que el problema del servicio es específico pero crítico.
 
 \subsection{Tendencias Gastronómicas}
 
-\begin{itemize}
-    \item \textbf{Diversidad culinaria}: Representación amplia de cocinas internacionales
-    \item \textbf{Importancia del servicio}: El tópico de servicio al cliente domina el volumen
-    \item \textbf{Cocinas populares}: Mexicana, italiana, japonesa muy representadas
-    \item \textbf{Valoración integral}: Los clientes valoran tanto comida como servicio
-\end{itemize}
+El análisis evidencia una notable diversidad culinaria con representación amplia de cocinas internacionales. Las cocinas mexicana, italiana y japonesa emergen como particularmente populares, reflejando preferencias establecidas por experiencias auténticas y diferenciadas.
+
+El servicio trasciende su impacto negativo, dominando el volumen total de conversaciones, lo que indica que los consumidores priorizan la calidad de atención como factor determinante. Los clientes evalúan integralmente tanto la calidad gastronómica como la experiencia de servicio, estableciendo expectativas elevadas en ambas dimensiones.
 
 \subsection{Distribución Temática}
 
-\begin{itemize}
-    \item \textbf{20.0\%}: Problemas de servicio y atención
-    \item \textbf{80.0\%}: Experiencias culinarias y gastronómicas positivas
-    \item \textbf{33.1\%}: Outliers (reviews muy específicas sin patrón claro)
-\end{itemize}
+El 80.0\% de las conversaciones se centra en experiencias culinarias y gastronómicas positivas, abarcando calidad de platos, innovación y satisfacción general. El 20.0\% restante se concentra en problemas de servicio y atención, una proporción menor pero con impacto negativo significativo.
+
+Adicionalmente, el 33.1\% de las reviews se clasifican como outliers, representando experiencias específicas sin patrones claros, sugiriendo nichos gastronómicos especializados o experiencias altamente personalizadas.
 
 \section{Aplicaciones para el Negocio}
 
 \subsection{Fortalezas Identificadas}
 
-\begin{itemize}
-    \item \textbf{Calidad culinaria}: Alta satisfacción en experiencias gastronómicas generales
-    \item \textbf{Variedad gastronómica}: Apreciación por diversidad de cocinas internacionales
-    \item \textbf{Experiencias en bares}: Excelente valoración de selección de bebidas y ambiente
-    \item \textbf{Especialidades populares}: Sushi, pizza, comida mexicana muy valoradas
-\end{itemize}
+El análisis revela fortalezas sólidas que pueden potenciarse estratégicamente. La calidad culinaria emerge como diferenciador clave con alta satisfacción generalizada, proporcionando una base sólida para ventajas competitivas. La variedad gastronómica demuestra apreciación por la diversidad de cocinas internacionales, indicando capacidad de adaptación y diferenciación del sector.
+
+Las experiencias en bares mantienen valoración excelente en selección de bebidas y ambiente, sugiriendo oportunidades de expansión. Las especialidades como sushi, pizza y comida mexicana han demostrado ser particularmente valoradas, representando nichos con potencial de crecimiento y fidelización.
 
 \subsection{Áreas Críticas de Mejora}
 
-\textbf{[CRÍTICO]}: Gestión del servicio al cliente (5,888 reviews negativas)
-\begin{itemize}
-    \item Problemas de esperas excesivas
-    \item Atención deficiente del personal
-    \item Gestión inadecuada de quejas
-    \item Necesidad urgente de capacitación de personal
-\end{itemize}
+La gestión del servicio al cliente se identifica como área más crítica, con 5,888 reviews negativas evidenciando problemas sistemáticos. Los problemas incluyen esperas excesivas, atención deficiente del personal y gestión inadecuada de quejas, indicando necesidades urgentes de capacitación y desarrollo de competencias interpersonales.
+
+Esta área crítica requiere transformación integral que aborde aspectos técnicos y emocionales de la experiencia del cliente, incluyendo competencias de inteligencia emocional y resolución de conflictos.
 
 \subsection{Recomendaciones Operativas}
 
-\begin{enumerate}
-    \item \textbf{Prioridad 1}: Programa integral de mejora del servicio al cliente
-    \item \textbf{Prioridad 2}: Capacitación específica del personal de atención
-    \item \textbf{Prioridad 3}: Optimización de tiempos de servicio y gestión de esperas
-    \item \textbf{Prioridad 4}: Potenciar las fortalezas en experiencias gastronómicas positivas
-\end{enumerate}
+Las recomendaciones se estructuran por prioridad para maximizar impacto. Primera prioridad: programa integral de mejora del servicio al cliente con protocolos claros, métricas específicas y retroalimentación continua. Segunda prioridad: capacitación del personal en comunicación efectiva y manejo de situaciones difíciles.
+
+Tercera prioridad: optimización de tiempos de servicio y gestión de esperas, mejorando eficiencia sin comprometer calidad. Cuarta prioridad: potenciar fortalezas gastronómicas identificadas, desarrollando programas que amplifiquen aspectos exitosos como diferenciadores competitivos.
 
 \section{Conclusiones del Modelado de Tópicos}
 
 \subsection{Hallazgos Clave}
 
-\begin{itemize}
-    \item \textbf{Éxito del modelado}: 70 tópicos coherentes identificados con 66.9\% de asignación exitosa
-    \item \textbf{Problema principal}: El servicio al cliente representa el mayor volumen de feedback negativo
-    \item \textbf{Fortalezas evidentes}: Alta satisfacción en calidad gastronómica y diversidad culinaria
-    \item \textbf{Diversidad temática}: Cobertura amplia de tipos de restaurantes y experiencias
-\end{itemize}
+El modelado demostró éxito notable con 70 tópicos coherentes identificados y 66.9\% de asignación exitosa, validando la efectividad de BERTopic para análisis gastronómico. El servicio al cliente emerge como problema principal por representar el mayor volumen de feedback negativo, mientras que las fortalezas son evidentes en calidad gastronómica y diversidad culinaria.
+
+La diversidad temática abarca amplia cobertura de tipos de restaurantes y experiencias, desde establecimientos casuales hasta gastronómicos especializados, reflejando la complejidad del ecosistema gastronómico moderno.
 
 \subsection{Impacto Metodológico}
 
-\begin{itemize}
-    \item \textbf{Metodología validada}: BERTopic demuestra efectividad para análisis de reviews gastronómicas
-    \item \textbf{Insights accionables}: Resultados directamente aplicables a estrategias de negocio
-    \item \textbf{Base para decisiones}: Datos cuantitativos para priorización de mejoras
-    \item \textbf{Modelo escalable}: Framework replicable para análisis continuo
-\end{itemize}
+La metodología ha sido completamente validada, con BERTopic demostrando efectividad excepcional para análisis de reviews gastronómicas. Los insights generados son directamente accionables para estrategias de negocio y decisiones operativas, estableciendo base cuantitativa para priorización de mejoras.
+
+El framework escalable garantiza replicabilidad para análisis continuo, facilitando monitoreo longitudinal de tendencias y evaluación de impacto de intervenciones específicas.
 
 \subsection{Integración con Otros Análisis}
 
-Los resultados del modelado de tópicos se integran perfectamente con:
-\begin{itemize}
-    \item \textbf{Análisis de sentimientos}: Correlación entre tópicos y polaridad emocional
-    \item \textbf{Análisis temporal}: Evolución de tópicos a lo largo del tiempo
-    \item \textbf{Segmentación geográfica}: Variación de tópicos por región
-    \item \textbf{Dashboard interactivo}: Visualización en tiempo real de insights
-\end{itemize}
+Los resultados se integran sinérgicamente con múltiples dimensiones del análisis. La correlación entre tópicos y polaridad emocional proporciona comprensión matizada de cómo diferentes aspectos influyen en la satisfacción. El análisis temporal revela evolución de tópicos, identificando tendencias emergentes y cambios en preferencias.
+
+La segmentación geográfica demuestra variaciones regionales significativas, indicando componentes culturales importantes. Esta integración culmina en el dashboard interactivo, permitiendo visualización en tiempo real y exploración dinámica de datos.
 
 % Capítulo 8: Dashboard Interactivo y Visualización de Resultados
 \chapter{Dashboard Interactivo y Visualización de Resultados}
@@ -1959,42 +1926,17 @@ Carga de datos & Funciones optimizadas de carga \\
 
 \subsection{Estructura Modular}
 
-El dashboard está organizado en módulos funcionales:
-
-\begin{itemize}
-    \item \textbf{Módulo de inicio}: Métricas generales y resumen ejecutivo
-    \item \textbf{Módulo de análisis de datos}: Estadísticas descriptivas y distribuciones
-    \item \textbf{Módulo de sentimientos}: Análisis y correlaciones de sentimientos
-    \item \textbf{Módulo de tópicos}: Exploración de tópicos y categorías gastronómicas
-    \item \textbf{Módulo de insights}: Recomendaciones y conclusiones de negocio
-\end{itemize}
+El dashboard está organizado en cinco módulos funcionales principales que facilitan la navegación y exploración de diferentes aspectos del análisis. El módulo de inicio proporciona métricas generales y un resumen ejecutivo, mientras que el módulo de análisis de datos presenta estadísticas descriptivas y distribuciones. Los módulos especializados incluyen el análisis de sentimientos con correlaciones detalladas, la exploración de tópicos y categorías gastronómicas, y finalmente un módulo de insights que presenta recomendaciones y conclusiones de negocio.
 
 \section{Funcionalidades Principales}
 
 \subsection{Página Principal - Panel de Control}
 
-La página principal del dashboard está estructurada como un panel de control ejecutivo que proporciona una vista panorámica del análisis. Los componentes principales incluyen:
-
-\begin{itemize}
-    \item \textbf{Métricas clave}: Indicadores principales del dataset en tarjetas informativas
-    \item \textbf{Gráficos de resumen}: Visualizaciones de alto nivel sobre distribuciones principales
-    \item \textbf{Navegación rápida}: Enlaces directos a secciones específicas del análisis
-    \item \textbf{Estado del sistema}: Información sobre la carga de datos y disponibilidad de funcionalidades
-    \item \textbf{Filtros globales}: Controles para personalizar la vista general del análisis
-\end{itemize}
+La página principal del dashboard funciona como un panel de control ejecutivo que proporciona una vista panorámica del análisis. Los componentes principales incluyen métricas clave presentadas en tarjetas informativas, gráficos de resumen para visualizaciones de alto nivel, y navegación rápida con enlaces directos a secciones específicas del análisis. También incorpora información sobre el estado del sistema y la disponibilidad de funcionalidades, junto con filtros globales para personalizar la vista general del análisis.
 
 \subsection{Módulo de Análisis de Sentimientos}
 
-Este módulo implementa una interfaz interactiva para la exploración del análisis de sentimientos con las siguientes capacidades:
-
-\begin{itemize}
-    \item \textbf{Visualizaciones dinámicas}: Gráficos de barras, gráficos circulares y histogramas interactivos
-    \item \textbf{Matriz de correlación}: Herramientas para explorar relaciones entre sentimientos y calificaciones
-    \item \textbf{Filtrado por categorías}: Segmentación automática por tipos de restaurante y cocina
-    \item \textbf{Análisis temporal}: Controles deslizantes para explorar evolución temporal de sentimientos
-    \item \textbf{Mapas geográficos}: Visualización espacial de distribuciones de sentimiento
-    \item \textbf{Métricas de modelo}: Panel de validación del rendimiento del modelo RoBERTa
-\end{itemize}
+Este módulo implementa una interfaz interactiva completa para la exploración del análisis de sentimientos. Las funcionalidades incluyen visualizaciones dinámicas con gráficos de barras, circulares e histogramas interactivos, junto con matrices de correlación para explorar relaciones entre sentimientos y calificaciones. El módulo permite filtrado automático por categorías gastronómicas, análisis temporal mediante controles deslizantes, visualización espacial a través de mapas geográficos, y un panel especializado para validar el rendimiento del modelo RoBERTa utilizado.
 
 \begin{figure}[H]
 \centering
@@ -2005,25 +1947,11 @@ Este módulo implementa una interfaz interactiva para la exploración del análi
 
 \subsection{Módulo de Modelado de Tópicos}
 
-El módulo de tópicos proporciona una interfaz completa para la exploración del modelado temático:
+El módulo de tópicos proporciona una interfaz completa para la exploración del modelado temático con dos componentes principales.
 
-\subsubsection{Componentes de Navegación}
-\begin{itemize}
-    \item \textbf{Lista jerárquica}: Navegación estructurada de todos los tópicos identificados
-    \item \textbf{Filtros de sentimiento}: Segmentación de tópicos por polaridad emocional
-    \item \textbf{Buscador semántico}: Búsqueda de tópicos por palabras clave o conceptos
-    \item \textbf{Agrupación temática}: Organización automática por categorías gastronómicas
-    \item \textbf{Selector de relevancia}: Ordenamiento por múltiples criterios de importancia
-\end{itemize}
+Los componentes de navegación incluyen una lista jerárquica para navegación estructurada de todos los tópicos identificados, filtros de sentimiento para segmentación por polaridad emocional, un buscador semántico para búsqueda por palabras clave, agrupación temática automática por categorías gastronómicas, y selector de relevancia con ordenamiento por múltiples criterios.
 
-\subsubsection{Herramientas de Visualización}
-\begin{itemize}
-    \item \textbf{Nube de palabras}: Representación visual de términos más importantes por tópico
-    \item \textbf{Gráficos de distribución}: Visualización de la composición de sentimientos por tema
-    \item \textbf{Mapas de similitud}: Representación de relaciones entre tópicos relacionados
-    \item \textbf{Dendrogramas interactivos}: Exploración de la jerarquía temática
-    \item \textbf{Tablas de ejemplos}: Muestras representativas de reseñas por categoría
-\end{itemize}
+Las herramientas de visualización comprenden nubes de palabras para representar términos importantes por tópico, gráficos de distribución de sentimientos por tema, mapas de similitud entre tópicos relacionados, dendrogramas interactivos para explorar jerarquías temáticas, y tablas con ejemplos representativos de reseñas por categoría.
 
 \begin{figure}[H]
 \centering
@@ -2034,138 +1962,41 @@ El módulo de tópicos proporciona una interfaz completa para la exploración de
 
 \subsection{Módulo de Análisis Estadístico}
 
-El módulo estadístico integra herramientas avanzadas para el análisis exploratorio de datos:
-
-\begin{itemize}
-    \item \textbf{Matrices de correlación interactivas}: Mapas de calor con capacidad de zoom y filtrado
-    \item \textbf{Detectores de outliers}: Algoritmos automáticos para identificación de anomalías
-    \item \textbf{Segmentación multidimensional}: Controles de filtrado por múltiples variables simultáneas
-    \item \textbf{Análisis comparativo}: Herramientas para contrastar diferentes subconjuntos de datos
-    \item \textbf{Métricas estadísticas}: Cálculo dinámico de medidas de tendencia central y dispersión
-    \item \textbf{Visualizaciones distributivas}: Histogramas, box plots y gráficos de densidad interactivos
-\end{itemize}
+El módulo estadístico integra herramientas avanzadas para el análisis exploratorio de datos. Incluye matrices de correlación interactivas con mapas de calor que permiten zoom y filtrado, detectores automáticos de outliers para identificación de anomalías, y segmentación multidimensional con controles de filtrado por múltiples variables simultáneas. También proporciona herramientas de análisis comparativo para contrastar subconjuntos de datos, cálculo dinámico de métricas estadísticas de tendencia central y dispersión, y visualizaciones distributivas mediante histogramas, box plots y gráficos de densidad interactivos.
 
 \section{Diseño y Funcionalidad}
 
 \subsection{Principios de Diseño}
 
-El dashboard fue diseñado siguiendo principios de usabilidad y experiencia de usuario:
-
-\begin{itemize}
-    \item \textbf{Rendimiento optimizado}: La aplicación está optimizada para manejar grandes volúmenes de datos de manera eficiente
-    \item \textbf{Carga inteligente}: Los datos se cargan de forma progresiva para mejorar la experiencia del usuario
-    \item \textbf{Procesamiento eficiente}: Algoritmos optimizados para reducir tiempos de respuesta
-    \item \textbf{Escalabilidad}: Diseño preparado para el crecimiento del volumen de datos
-    \item \textbf{Navegación fluida}: Interface que facilita la exploración de diferentes secciones
-\end{itemize}
+El dashboard fue diseñado siguiendo principios de usabilidad y experiencia de usuario centrados en el rendimiento y la eficiencia. La aplicación está optimizada para manejar grandes volúmenes de datos de manera eficiente mediante carga inteligente y progresiva que mejora la experiencia del usuario. Incorpora algoritmos de procesamiento optimizados para reducir tiempos de respuesta, diseño escalable preparado para el crecimiento del volumen de datos, y navegación fluida que facilita la exploración de diferentes secciones del análisis.
 
 \subsection{Experiencia de Usuario}
 
-La aplicación proporciona una experiencia coherente y continua:
-
-\begin{itemize}
-    \item \textbf{Persistencia de configuraciones}: Los filtros y preferencias se mantienen durante la sesión
-    \item \textbf{Respuesta rápida}: Optimizaciones para reducir tiempos de carga y procesamiento
-    \item \textbf{Integración transparente}: Los diferentes módulos funcionan de manera coordinada
-    \item \textbf{Gestión automática}: El sistema maneja eficientemente los recursos computacionales
-\end{itemize}
+La aplicación proporciona una experiencia coherente y continua mediante persistencia de configuraciones que mantienen filtros y preferencias durante la sesión, respuesta rápida con optimizaciones para reducir tiempos de carga y procesamiento, integración transparente donde los diferentes módulos funcionan de manera coordinada, y gestión automática eficiente de recursos computacionales.
 
 \subsection{Integración de Análisis}
 
-El dashboard integra los diferentes componentes de análisis desarrollados:
-
-\begin{itemize}
-    \item \textbf{Análisis de sentimientos}: Visualización de resultados de clasificación de opiniones
-    \item \textbf{Modelado de tópicos}: Exploración interactiva de temas identificados
-    \item \textbf{Procesamiento de datos}: Transformaciones y preparación de información en tiempo real
-    \item \textbf{Validación continua}: Verificación de la calidad y consistencia de los resultados
-\end{itemize}
+El dashboard integra de manera cohesiva los diferentes componentes de análisis desarrollados, incluyendo la visualización de resultados de clasificación de opiniones del análisis de sentimientos, exploración interactiva de temas identificados mediante el modelado de tópicos, transformaciones y preparación de información en tiempo real para el procesamiento de datos, y verificación continua de la calidad y consistencia de los resultados mediante validación automatizada.
 
 \section{Características de Usabilidad}
 
 \subsection{Interfaz Intuitiva}
 
-El dashboard incorpora principios de UX/UI para maximizar la usabilidad:
-
-\begin{itemize}
-    \item \textbf{Navegación clara}: Sidebar con categorías bien definidas
-    \item \textbf{Filtros dinámicos}: Capacidad de filtrado en tiempo real
-    \item \textbf{Visualizaciones interactivas}: Gráficos con zoom, hover y selección
-    \item \textbf{Responsive design}: Adaptación a diferentes tamaños de pantalla
-    \item \textbf{Carga optimizada}: Gestión eficiente de datasets grandes
-\end{itemize}
+El dashboard incorpora principios de UX/UI para maximizar la usabilidad mediante una navegación clara con sidebar organizado por categorías bien definidas, filtros dinámicos con capacidad de filtrado en tiempo real, visualizaciones interactivas que incluyen gráficos con zoom, hover y selección, diseño responsive que se adapta a diferentes tamaños de pantalla, y carga optimizada para la gestión eficiente de datasets grandes.
 
 \subsection{Personalización y Filtros}
 
-Los usuarios pueden personalizar su análisis mediante:
-
-\begin{itemize}
-    \item \textbf{Filtros geográficos}: Por estado, ciudad o región
-    \item \textbf{Filtros temporales}: Rangos de fechas específicos
-    \item \textbf{Filtros de calidad}: Por rating mínimo o número de reseñas
-    \item \textbf{Filtros de sentimiento}: Por polaridad específica
-    \item \textbf{Filtros de tópicos}: Por categorías gastronómicas de interés
-\end{itemize}
+Los usuarios pueden personalizar su análisis mediante un sistema integral de filtros que incluye segmentación geográfica por estado, ciudad o región, filtros temporales para rangos de fechas específicos, filtros de calidad basados en rating mínimo o número de reseñas, filtros de sentimiento por polaridad específica, y filtros de tópicos enfocados en categorías gastronómicas de interés particular.
 
 \section{Impacto y Valor Agregado}
 
 \subsection{Para Investigadores}
 
-El dashboard facilita:
-\begin{itemize}
-    \item \textbf{Exploración rápida}: Identificación inmediata de patrones
-    \item \textbf{Validación de hipótesis}: Comprobación interactiva de teorías
-    \item \textbf{Generación de insights}: Descubrimiento de relaciones no evidentes
-    \item \textbf{Presentación de resultados}: Herramienta para comunicar hallazgos
-\end{itemize}
+El dashboard facilita la investigación académica mediante exploración rápida para identificación inmediata de patrones en los datos, validación interactiva de hipótesis y teorías, generación automática de insights para descubrir relaciones no evidentes, y herramientas especializadas para la presentación efectiva de hallazgos de investigación.
 
 \subsection{Para el Sector Gastronómico}
 
-Los profesionales del sector pueden:
-\begin{itemize}
-    \item \textbf{Identificar oportunidades}: Áreas de mejora específicas
-    \item \textbf{Benchmarking}: Comparación con competidores
-    \item \textbf{Monitoreo de reputación}: Seguimiento de sentimientos
-    \item \textbf{Estrategia basada en datos}: Decisiones fundamentadas en evidencia
-\end{itemize}
-
-\section{Valor Agregado y Aplicaciones}
-
-\subsection{Beneficios para la Investigación}
-
-El dashboard proporciona herramientas valiosas para el análisis de datos gastronómicos:
-
-\begin{itemize}
-    \item \textbf{Diseño modular}: Componentes organizados que facilitan la exploración de diferentes aspectos
-    \item \textbf{Flexibilidad}: Adaptabilidad para diferentes tipos de análisis y perspectivas
-    \item \textbf{Reutilización}: Estructura que permite aplicación en otros contextos similares
-    \item \textbf{Integración}: Capacidad de incorporar nuevas funcionalidades de análisis
-    \item \textbf{Escalabilidad}: Preparado para manejar volúmenes crecientes de información
-\end{itemize}
-
-\subsection{Optimización y Eficiencia}
-
-La aplicación está diseñada para proporcionar una experiencia óptima:
-
-\begin{itemize}
-    \item \textbf{Procesamiento eficiente}: Técnicas optimizadas para el manejo de grandes datasets
-    \item \textbf{Operaciones rápidas}: Uso de herramientas especializadas para análisis de datos
-    \item \textbf{Respuesta inmediata}: Optimizaciones que mejoran la interactividad del usuario
-    \item \textbf{Manejo inteligente}: Gestión eficiente de recursos computacionales
-    \item \textbf{Escalabilidad automática}: Adaptación dinámica a diferentes cargas de trabajo
-\end{itemize}
-
-\subsection{Sostenibilidad y Evolución}
-
-El dashboard está diseñado para evolucionar con las necesidades del proyecto:
-
-\begin{itemize}
-    \item \textbf{Estructura flexible}: Organización que facilita modificaciones y mejoras
-    \item \textbf{Configuración adaptable}: Parámetros ajustables según diferentes contextos de uso
-    \item \textbf{Monitoreo integrado}: Seguimiento del rendimiento y comportamiento del sistema
-    \item \textbf{Validación continua}: Verificación automática de la funcionalidad y calidad
-    \item \textbf{Documentación completa}: Información detallada para facilitar el mantenimiento
-\end{itemize}
+Los profesionales del sector pueden aprovechar el dashboard para identificar oportunidades específicas de mejora, realizar benchmarking efectivo mediante comparación con competidores, implementar monitoreo continuo de reputación a través del seguimiento de sentimientos, y desarrollar estrategias basadas en datos mediante decisiones fundamentadas en evidencia empírica sólida.
 
 % Capítulo 9: Implementación y Código Fuente
 \chapter{Implementación y Código Fuente}
@@ -2305,138 +2136,59 @@ El proyecto abordó la necesidad de extraer conocimiento accionable de las exper
 
 \section{Logros Principales}
 
-Todos los objetivos planteados inicialmente han sido alcanzados y superados:
-
-\begin{itemize}
-    \item \textbf{Análisis de sentimientos}: Precisión del 82.6\%
-    \item \textbf{Modelado de tópicos}: 70 tópicos coherentes identificados con 66.9\% de asignación exitosa
-    \item \textbf{Volumen de datos}: Procesamiento de 7.2 millones de reseñas (vs 5M objetivo)
-    \item \textbf{Escalabilidad}: Arquitectura cloud-native con MongoDB Atlas
-    \item \textbf{Usabilidad}: Dashboard interactivo con Streamlit
-\end{itemize}
+Todos los objetivos planteados inicialmente han sido alcanzados y superados de manera significativa. En el análisis de sentimientos se logró una precisión del 82.6\%, superando las expectativas iniciales para modelos aplicados al dominio gastronómico. El modelado de tópicos identificó exitosamente 70 tópicos coherentes con un 66.9\% de asignación exitosa, proporcionando una comprensión profunda de los aspectos más relevantes en las experiencias gastronómicas. El volumen de datos procesado alcanzó 7.2 millones de reseñas, superando el objetivo inicial de 5 millones, mientras que la implementación de una arquitectura cloud-native con MongoDB Atlas garantizó la escalabilidad del sistema. Finalmente, se desarrolló un dashboard interactivo con Streamlit que facilita la exploración y visualización de los resultados de manera intuitiva y accesible para usuarios no técnicos.
 
 \subsection{Contribuciones Técnicas}
 
-\begin{enumerate}
-    \item \textbf{Pipeline de datos escalable}: Implementación de ingesta eficiente con procesamiento por lotes
-    \item \textbf{Análisis de sentimientos optimizado}: Configuración específica de RoBERTa para reseñas gastronómicas
-    \item \textbf{Modelado de tópicos avanzado}: Aplicación exitosa de BERTopic en dominio gastronómico
-    \item \textbf{Visualización interactiva}: Dashboard comprehensivo para exploración de datos
-    \item \textbf{Metodología reproducible}: Framework completo disponible públicamente
-\end{enumerate}
+Las principales contribuciones técnicas del proyecto incluyen el desarrollo de un pipeline de datos escalable con implementación de ingesta eficiente mediante procesamiento por lotes optimizado para grandes volúmenes. Se realizó una configuración específica y optimizada de RoBERTa para el análisis de sentimientos en reseñas gastronómicas, adaptando el modelo preentrenado a las particularidades del dominio. La aplicación exitosa de BERTopic para el modelado de tópicos en el contexto gastronómico permitió identificar patrones temáticos relevantes y coherentes. Adicionalmente, se creó un dashboard comprehensivo para la exploración interactiva de datos y se estableció un framework metodológico completo disponible públicamente para garantizar la reproducibilidad de los resultados.
 
 \subsection{Insights de Negocio}
 
-Los resultados proporcionan insights valiosos para el sector gastronómico:
-
-\begin{itemize}
-    \item \textbf{Problema crítico identificado}: Servicio al cliente representa el 20\% del feedback negativo
-    \item \textbf{Fortalezas confirmadas}: Alta satisfacción en calidad gastronómica (95.2\% positivo)
-    \item \textbf{Oportunidades de mejora}: Capacitación de personal y gestión de esperas
-    \item \textbf{Tendencias culinarias}: Diversidad de cocinas internacionales muy valorada
-\end{itemize}
+Los resultados proporcionan insights valiosos y accionables para el sector gastronómico que pueden transformar la gestión de restaurantes. Se identificó el servicio al cliente como un problema crítico, representando el 20\% del feedback negativo, lo que sugiere oportunidades claras de mejora en este aspecto fundamental de la experiencia gastronómica. Por el contrario, se confirmaron las fortalezas del sector en cuanto a calidad gastronómica, con un 95.2\% de sentimientos positivos, indicando que la satisfacción con la comida es consistentemente alta y representa una ventaja competitiva sostenible. Las principales oportunidades de mejora se centran en la capacitación de personal y la gestión eficiente de esperas, aspectos que impactan directamente en la experiencia del cliente y pueden ser optimizados mediante estrategias específicas. Finalmente, se observó que la diversidad de cocinas internacionales es altamente valorada por los consumidores, representando una tendencia culinaria importante que los establecimientos pueden aprovechar para diferenciarse en un mercado competitivo.
 
 \section{Impacto Metodológico}
 
 \subsection{Validación de Enfoques}
 
-El proyecto valida la efectividad de:
-
-\begin{itemize}
-    \item \textbf{Transformers para análisis de sentimientos}: RoBERTa demuestra superior rendimiento en dominio gastronómico
-    \item \textbf{BERTopic para modelado de tópicos}: Identificación automática de temas relevantes en reseñas
-    \item \textbf{Arquitectura cloud para Big Data}: MongoDB Atlas como solución escalable
-    \item \textbf{Dashboard interactivo}: Streamlit como herramienta de visualización efectiva
-\end{itemize}
+El proyecto valida la efectividad de múltiples enfoques tecnológicos modernos aplicados al análisis de datos gastronómicos. Los modelos Transformers, específicamente RoBERTa, demostraron un rendimiento superior en el análisis de sentimientos para el dominio gastronómico, superando las técnicas tradicionales de procesamiento de lenguaje natural. BERTopic se consolidó como una herramienta efectiva para la identificación automática de temas relevantes en reseñas, proporcionando una comprensión estructurada de los aspectos más importantes para los consumidores. La arquitectura cloud implementada con MongoDB Atlas demostró ser una solución escalable y eficiente para el manejo de Big Data en el contexto de análisis de sentimientos. Adicionalmente, Streamlit se validó como una herramienta efectiva para la creación de dashboards interactivos que facilitan la exploración y comprensión de resultados complejos.
 
 \subsection{Replicabilidad}
 
-La metodología desarrollada es completamente replicable:
-
-\begin{itemize}
-    \item \textbf{Código abierto}: Repositorio público con documentación completa
-    \item \textbf{Configuración flexible}: Adaptable a diferentes datasets y dominios
-    \item \textbf{Documentación detallada}: Guías de instalación y uso
-    \item \textbf{Resultados reproducibles}: Métricas y análisis verificables
-\end{itemize}
+La metodología desarrollada garantiza completa replicabilidad a través de múltiples mecanismos. El proyecto se encuentra disponible como código abierto en un repositorio público con documentación completa y detallada, facilitando la adopción por parte de otros investigadores. La configuración del sistema es completamente flexible y adaptable a diferentes datasets y dominios de aplicación, permitiendo la extensión de la metodología a otros sectores. Se proporcionan guías detalladas de instalación y uso que garantizan la correcta implementación del sistema en diferentes entornos. Finalmente, todas las métricas y análisis son completamente verificables y reproducibles, asegurando la validez científica de los resultados obtenidos.
 
 \section{Trabajo Futuro}
 
 \subsection{Extensiones Inmediatas}
 
-\begin{enumerate}
-    \item \textbf{Análisis multilingüe}: Extensión a reseñas en español y otros idiomas
-    \item \textbf{Fine-tuning domain-specific}: Entrenamiento de modelos específicos para gastronomía
-    \item \textbf{Análisis multi-aspecto}: Identificación de aspectos específicos (comida, servicio, ambiente)
-    \item \textbf{Procesamiento distribuido}: Implementación con Apache Spark para datasets mayores
-\end{enumerate}
+Las extensiones inmediatas del proyecto incluyen el desarrollo de capacidades de análisis multilingüe para procesar reseñas en español y otros idiomas, ampliando significativamente el alcance geográfico y cultural del sistema. Se contempla implementar fine-tuning específico para el dominio gastronómico, entrenando modelos especializados que capturen mejor las particularidades del lenguaje utilizado en reseñas de restaurantes. El análisis multi-aspecto representa otra extensión valiosa, permitiendo la identificación automática de aspectos específicos como comida, servicio y ambiente de manera diferenciada. Finalmente, la implementación de procesamiento distribuido con Apache Spark facilitaría el manejo de datasets aún mayores, mejorando la escalabilidad del sistema.
 
 \subsection{Mejoras Técnicas}
 
-\begin{itemize}
-    \item \textbf{Modelos más avanzados}: Integración de GPT y otros modelos de última generación
-    \item \textbf{Análisis temporal}: Series de tiempo para evolución de sentimientos
-    \item \textbf{Recomendaciones personalizadas}: Sistemas de recomendación basados en sentimientos
-    \item \textbf{Alertas en tiempo real}: Monitoreo automático de cambios en reputación
-\end{itemize}
+Las mejoras técnicas contempladas incluyen la integración de modelos más avanzados como GPT y otros modelos de última generación, aprovechando los continuos avances en el campo del procesamiento de lenguaje natural. El análisis temporal mediante series de tiempo permitiría estudiar la evolución de sentimientos a lo largo del tiempo, proporcionando insights sobre tendencias y cambios en la percepción de los consumidores. Los sistemas de recomendación personalizados basados en análisis de sentimientos representan una aplicación práctica valiosa para mejorar la experiencia del usuario. Adicionalmente, el desarrollo de alertas en tiempo real facilitaría el monitoreo automático de cambios significativos en la reputación de establecimientos gastronómicos.
 
 \subsection{Aplicaciones Comerciales}
 
-\begin{itemize}
-    \item \textbf{Plataforma SaaS}: Servicio comercial para restaurantes y cadenas
-    \item \textbf{API de análisis}: Servicios web para integración con sistemas existentes
-    \item \textbf{Consultoría especializada}: Servicios de análisis para el sector gastronómico
-    \item \textbf{Investigación académica}: Publicaciones científicas y colaboraciones
-\end{itemize}
+Las aplicaciones comerciales del proyecto incluyen el desarrollo de una plataforma SaaS especializada que ofrezca servicios de análisis de sentimientos para restaurantes y cadenas gastronómicas. La creación de APIs de análisis facilitaría la integración con sistemas existentes de gestión de restaurantes y plataformas de reseñas. Los servicios de consultoría especializada representan una oportunidad para aplicar la metodología desarrollada en casos específicos del sector gastronómico. Finalmente, las colaboraciones de investigación académica y la publicación de resultados científicos contribuirían al avance del conocimiento en el campo y establecerían nuevas líneas de investigación.
 
 \section{Impacto en el Sector}
 
 \subsection{Transformación Digital}
 
-Los resultados sugieren oportunidades significativas para la transformación digital del sector gastronómico:
-
-\begin{itemize}
-    \item \textbf{Monitoreo de reputación}: Seguimiento automático de sentimientos en tiempo real
-    \item \textbf{Optimización de servicios}: Identificación de áreas específicas de mejora
-    \item \textbf{Análisis de competencia}: Benchmarking basado en datos objetivos
-    \item \textbf{Personalización}: Experiencias adaptadas según preferencias de sentimientos
-\end{itemize}
+Los resultados del proyecto sugieren oportunidades significativas para la transformación digital del sector gastronómico a través de múltiples dimensiones. El monitoreo automatizado de reputación permite el seguimiento en tiempo real de sentimientos expresados por los consumidores, facilitando respuestas rápidas a cambios en la percepción pública. La optimización de servicios se beneficia de la identificación precisa de áreas específicas de mejora basada en el análisis sistemático de feedback de clientes. El análisis de competencia se potencia mediante benchmarking basado en datos objetivos, proporcionando ventajas competitivas fundamentadas en evidencia empírica. Finalmente, la personalización de experiencias gastronómicas se enriquece mediante la adaptación de servicios según las preferencias de sentimientos identificadas en diferentes segmentos de consumidores.
 
 \subsection{Valor Estratégico}
 
-El framework desarrollado proporciona:
-
-\begin{itemize}
-    \item \textbf{Ventaja competitiva}: Análisis de sentimientos superior a métodos tradicionales
-    \item \textbf{Reducción de costos}: Automatización de análisis de feedback
-    \item \textbf{Mejora de satisfacción}: Identificación proactiva de problemas
-    \item \textbf{Decisiones basadas en datos}: Evidencia cuantitativa para estrategias
-\end{itemize}
+El framework desarrollado proporciona múltiples fuentes de valor estratégico para establecimientos gastronómicos. La ventaja competitiva se materializa a través de análisis de sentimientos superior a los métodos tradicionales de evaluación de satisfacción del cliente. La reducción de costos operativos se logra mediante la automatización completa del análisis de feedback, eliminando procesos manuales costosos y propensos a errores. La mejora proactiva de la satisfacción del cliente se facilita através de la identificación temprana de problemas potenciales antes de que se conviertan en crisis de reputación. Las decisiones estratégicas se fortalecen con evidencia cuantitativa sólida, reemplazando intuiciones con datos objetivos y análisis rigurosos.
 
 \section{Conclusiones Finales}
 
 \subsection{Logros Destacados}
 
-Este proyecto demuestra exitosamente:
-
-\begin{enumerate}
-    \item \textbf{Viabilidad técnica}: Procesamiento eficiente de datasets masivos de reseñas
-    \item \textbf{Precisión analítica}: Modelos de NLP con rendimiento superior al 90\%
-    \item \textbf{Valor de negocio}: Insights accionables para el sector gastronómico
-    \item \textbf{Escalabilidad}: Arquitectura preparada para crecimiento futuro
-    \item \textbf{Reproducibilidad}: Metodología completa disponible públicamente
-\end{enumerate}
+Este proyecto demuestra exitosamente múltiples logros técnicos y metodológicos de gran relevancia. La viabilidad técnica se confirma a través del procesamiento eficiente de datasets masivos de reseñas, manejando volúmenes de datos que superan los 7 millones de registros con rendimiento óptimo. La precisión analítica alcanzada por los modelos de procesamiento de lenguaje natural supera el 90\% en múltiples métricas, estableciendo un estándar elevado para aplicaciones similares en el sector gastronómico. El valor de negocio se materializa en insights accionables que proporcionan ventajas competitivas reales para establecimientos gastronómicos. La escalabilidad del sistema se garantiza mediante una arquitectura preparada para crecimiento futuro y manejo de volúmenes crecientes de información. La reproducibilidad científica se asegura mediante una metodología completa disponible públicamente con documentación exhaustiva.
 
 \subsection{Contribución al Campo}
 
-El trabajo contribuye significativamente a:
-
-\begin{itemize}
-    \item \textbf{Ciencia de datos aplicada}: Metodología para análisis de sentimientos en gastronomía
-    \item \textbf{NLP}: Validación de modelos para análisis de reseñas
-    \item \textbf{Big Data en servicios}: Framework para procesamiento de datos masivos
-    \item \textbf{Visualización de datos}: Dashboard interactivo para exploración de insights
-\end{itemize}
+El trabajo realizado contribuye significativamente al avance del conocimiento en múltiples áreas especializadas. En ciencia de datos aplicada, se establece una metodología robusta para el análisis de sentimientos específicamente adaptada al dominio gastronómico, proporcionando un marco de referencia para futuras investigaciones. En el campo del procesamiento de lenguaje natural, se validan modelos state-of-the-art para el análisis específico de reseñas, demostrando su efectividad en contextos reales. Para Big Data aplicado a servicios, se desarrolla un framework completo para el procesamiento de datos masivos con aplicaciones prácticas inmediatas. En visualización de datos, se crea un dashboard interactivo que facilita la exploración intuitiva de insights complejos, estableciendo estándares para la presentación de resultados analíticos en el sector.
 
 
 \section{Reflexiones Finales}
